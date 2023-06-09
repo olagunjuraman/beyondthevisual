@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    volumes:
+      - ./api/src:/app/src
+    ports:
+      - 3001:3001
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
